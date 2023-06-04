@@ -9,6 +9,7 @@ app.use(cors());
 
 const connect = () => {
   try {
+    mongoose.set('strictQuery', true);
     mongoose.connect(process.env.MONGO_URL);
   } catch (error) {
     throw error;
